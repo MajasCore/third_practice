@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager_app/main.dart';
+import 'package:task_manager_app/home_page.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _SplashState extends State<Splash> {
 
   _navigatetohome()async {
     await Future.delayed(Duration(milliseconds: 1500),() {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage(title: 'Tommorow',)));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage()));
   }
 
   @override
@@ -28,6 +29,10 @@ class _SplashState extends State<Splash> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
+            stops: [
+              0.05,
+              0.3,
+            ],
             colors: [Colors.white, Color(0xffDBE9F6),]
           ),
         ),
