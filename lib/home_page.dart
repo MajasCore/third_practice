@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:task_manager_app/people_page.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -84,7 +85,18 @@ class MyHomePage extends StatelessWidget {
               SizedBox(
                 height: 60.0, 
               ),
-              Container(
+              ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SecondRoute()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20))),
+              child: Container(
                 height: 145.0,
                 width: double.infinity,
                 padding: EdgeInsets.all(20.0),
@@ -108,7 +120,7 @@ class MyHomePage extends StatelessWidget {
                       height: 5.0,
                     ), 
                     Text(
-                      'Zendya and Emilie',
+                      'Zendaya and Emilia',
                       style: TextStyle(
                         color: Colors.grey[400],
                         fontSize: 15.0, 
@@ -163,7 +175,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ]
                 ), 
-              ),
+              ),),
              
               SizedBox(
                 height: 30.0,
@@ -200,11 +212,11 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 30.0,
+                height: 25.0,
               ),
               StaggeredGrid.count(
                 crossAxisCount: 4,
-                mainAxisSpacing: 10,
+                mainAxisSpacing: 1,
                 crossAxisSpacing: 10,
                 children: [
                   StaggeredGridTile.count(
